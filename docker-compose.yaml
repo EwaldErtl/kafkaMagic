@@ -1,0 +1,15 @@
+version: '2'
+services:
+  magic:
+    image: digitsy/kafka-magic
+    ports:
+      - "5000:80"
+    environment:
+      KMAGIC_ALLOW_TOPIC_DELETE: "true"
+      KMAGIC_CONFIG_STORE_TYPE: "file"
+      KMAGIC_CONFIG_STORE_CONNECTION: "Data Source=/config/KafkaMagicConfig.db;"
+      KMAGIC_CONFIG_ENCRYPTION_KEY: "kafkaMagic@secure"
+    volumes:
+      - '/home/eer/dev/meed/kafkaMagic/config:/config'
+        
+
